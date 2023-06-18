@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
       // Remove the debug banner
       debugShowCheckedModeBanner: false,
       title: 'Home Screen',
+
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.deepOrange,
       ),
       home: const ProductScreen(),
     );

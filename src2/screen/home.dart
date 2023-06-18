@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project/src2/screen/Profile.dart';
+import 'package:project/src2/screen/sign%20in%20.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pizza Screen'),
+        title: const Text('🍕🍟Bhook Lagii'),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
@@ -16,10 +18,71 @@ class ProductScreen extends StatelessWidget {
               print('Search Pizza');
             },
           ),
-          const Icon(Icons.login),
-          const Icon(Icons.settings),
           const Icon(Icons.shopping_cart),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const UserAccountsDrawerHeader(
+              // <-- SEE HERE
+              decoration:
+                  BoxDecoration(color: Color.fromARGB(255, 221, 105, 10)),
+              accountName: Text(
+                "Pizza pizza",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              accountEmail: Text(
+                "pizzapizza@gmail.com",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.orange,
+                  child: Image(
+                      image: NetworkImage(
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwV1xDPRMn8H1U7FlKXhUjxJ3ivdhjv0Q39A&usqp=CAU"))),
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.home,
+              ),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.person,
+              ),
+              title: const Text('My Profile'),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Profile()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.app_registration,
+              ),
+              title: const Text('sign in'),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SignInPage(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +91,7 @@ class ProductScreen extends StatelessWidget {
             // Image with icons
             Container(
               height: 200,
-              color: Color.fromRGBO(251, 92, 0, 1),
+              color: const Color.fromRGBO(251, 92, 0, 1),
               child: Stack(
                 children: [
                   // Image
@@ -169,13 +232,13 @@ class ProductScreen extends StatelessWidget {
                           },
                           child: Container(
                             margin: const EdgeInsets.only(right: 8),
-                            color: Colors.green,
+                            color: const Color.fromARGB(255, 21, 194, 27),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 ClipOval(
                                   child: Image.network(
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXfX8zoTFQfXbMDaC-XNc1zOjQ-nzQABdivg&usqp=CAU',
+                                    'https://images.bolt.eu/store/2022/2022-04-08/743afae5-5e20-4a54-b4e9-9a9a6e67edca.png',
                                     width: 80,
                                     height: 80,
                                     fit: BoxFit.cover,
@@ -187,7 +250,8 @@ class ProductScreen extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color:
+                                          Color.fromARGB(255, 233, 255, 233)),
                                 ),
                                 const SizedBox(width: 16),
                                 const Text(
