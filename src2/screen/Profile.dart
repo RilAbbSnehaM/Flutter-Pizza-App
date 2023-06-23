@@ -31,8 +31,7 @@ class _ProfileScreenState extends State<Profile> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
                 image: const DecorationImage(
-                  image: NetworkImage(
-                      'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png'),
+                  image: AssetImage('assets/images/profile.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),

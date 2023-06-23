@@ -1,5 +1,20 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:project/src2/screen/Categories.dart';
+import 'package:project/src2/screen/Cheese.dart';
+import 'package:project/src2/screen/Delux.dart';
+
+import 'package:project/src2/screen/HotDeals.dart';
+import 'package:project/src2/screen/Payment.dart';
+import 'package:project/src2/screen/PizzaSpecialsScreen.dart';
 import 'package:project/src2/screen/Profile.dart';
+import 'package:project/src2/screen/bagel.dart';
+import 'package:project/src2/screen/farmhouse.dart';
+import 'package:project/src2/screen/greek.dart';
+import 'package:project/src2/screen/italian.dart';
+import 'package:project/src2/screen/margerita%20pizza.dart';
+import 'package:project/src2/screen/search.dart';
+import 'package:project/src2/screen/sicilian.dart';
 import 'package:project/src2/screen/sign%20in%20.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -14,6 +29,9 @@ class ProductScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SearchPage()));
+
               // Handle search bushtton press
               print('Search Pizza');
             },
@@ -23,7 +41,6 @@ class ProductScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
             const UserAccountsDrawerHeader(
@@ -45,9 +62,7 @@ class ProductScreen extends StatelessWidget {
 
               currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.orange,
-                  child: Image(
-                      image: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwV1xDPRMn8H1U7FlKXhUjxJ3ivdhjv0Q39A&usqp=CAU"))),
+                  child: Image(image: AssetImage('assets/images/ch.png'))),
             ),
             ListTile(
               leading: const Icon(
@@ -91,12 +106,12 @@ class ProductScreen extends StatelessWidget {
             // Image with icons
             Container(
               height: 200,
-              color: const Color.fromRGBO(251, 92, 0, 1),
+              color: Color.fromARGB(255, 248, 102, 17),
               child: Stack(
                 children: [
                   // Image
-                  Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXpJtRg63wg-41EWT3XwoxkqusZgqDv8KBmg&usqp=CAU',
+                  Image.asset(
+                    'assets/images/PizzaPizza-Logo.png',
                     fit: BoxFit.fitHeight,
                     height: double.infinity,
                     width: double.infinity,
@@ -145,6 +160,8 @@ class ProductScreen extends StatelessWidget {
                         // Container 1
                         GestureDetector(
                           onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Margerita()));
                             // Handle button press for Container 1
                             print('Margherita Pizza');
                           },
@@ -155,8 +172,8 @@ class ProductScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 ClipOval(
-                                  child: Image.network(
-                                    'https://media.istockphoto.com/id/1172354645/photo/top-view-of-pizza-margherita-on-black-background-classic-italian-pizza-margarita-with-tomato.jpg?s=170667a&w=0&k=20&c=9EoHHQ3IDW43A5Mhyj54Yim8iJoMzQz0l_r-rAyjV-g=',
+                                  child: Image.asset(
+                                    'assets/images/margerita.jpeg',
                                     width: 80,
                                     height: 80,
                                     fit: BoxFit.cover,
@@ -186,7 +203,8 @@ class ProductScreen extends StatelessWidget {
                         // Container 2
                         GestureDetector(
                           onTap: () {
-                            // Handle button press for Container 2
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Suggested()));
                             print('FarmHouse Pizza');
                           },
                           child: Container(
@@ -196,8 +214,8 @@ class ProductScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 ClipOval(
-                                  child: Image.network(
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHyzGFDK5WZ4x2Ef7H3VSobqezOGLBsTUjhQ&usqp=CAU',
+                                  child: Image.asset(
+                                    'assets/images/farmhouse pizza.jpeg',
                                     width: 80,
                                     height: 80,
                                     fit: BoxFit.cover,
@@ -227,7 +245,9 @@ class ProductScreen extends StatelessWidget {
                         // Container 3
                         GestureDetector(
                           onTap: () {
-                            // Handle button press for Container 3
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Delux()));
+
                             print('Delux Veggie Pizza');
                           },
                           child: Container(
@@ -237,8 +257,8 @@ class ProductScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 ClipOval(
-                                  child: Image.network(
-                                    'https://images.bolt.eu/store/2022/2022-04-08/743afae5-5e20-4a54-b4e9-9a9a6e67edca.png',
+                                  child: Image.asset(
+                                    'assets/images/delux.jpeg',
                                     width: 80,
                                     height: 80,
                                     fit: BoxFit.cover,
@@ -269,7 +289,8 @@ class ProductScreen extends StatelessWidget {
                         // Container 4
                         GestureDetector(
                           onTap: () {
-                            // Handle button press for Container 4
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Cheese()));
                             print('Cheese n Corn Pizza');
                           },
                           child: Container(
@@ -278,8 +299,8 @@ class ProductScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 ClipOval(
-                                  child: Image.network(
-                                    'https://i0.wp.com/www.dominos.co.in/files/items/Cheese-N-Corn.png',
+                                  child: Image.asset(
+                                    'assets/images/Corn.jpg',
                                     width: 80,
                                     height: 80,
                                     fit: BoxFit.cover,
@@ -311,20 +332,29 @@ class ProductScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 16),
-            const Text(
-              'Categories',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+
+            const SizedBox(
+              height: 30,
+              width: 30,
             ),
+            Container(
+                padding: EdgeInsets.all(5),
+                margin: EdgeInsets.all(5),
+                child: const Text(
+                  'Categories',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
             const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Italian()));
                     // Handle button press for Category 1
                     print('Italian Pizza');
                   },
@@ -358,6 +388,8 @@ class ProductScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Sicilian()));
                     // Handle button press for Category 2
                     print('Sicilian Pizza');
                   },
@@ -391,6 +423,8 @@ class ProductScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Greek()));
                     // Handle button press for Category 3
                     print('Greek Pizza');
                   },
@@ -424,6 +458,8 @@ class ProductScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Bagel()));
                     // Handle button press for Category 4
                     print('Bagel Pizza');
                   },
@@ -457,26 +493,37 @@ class ProductScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 16),
-            const Text(
-              'More Options',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+
+            const SizedBox(
+              height: 20,
+              width: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.all(5),
+              child: const Text(
+                'More Options',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 8),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
                   onTap: () {
-                    // Handle button press for More Option 1
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PizzaSpecialsScreen()));
+
                     print('Specials');
                   },
                   child: Container(
-                    width: 100,
-                    height: 90,
+                    width: 80,
+                    height: 80,
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Color.fromARGB(236, 255, 193, 92),
@@ -504,12 +551,14 @@ class ProductScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => HotDealsPage()));
                     // Handle button press for More Option 2
                     print('Hot deals');
                   },
                   child: Container(
-                    width: 100,
-                    height: 90,
+                    width: 80,
+                    height: 80,
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Color.fromARGB(255, 255, 223, 45),
@@ -537,12 +586,13 @@ class ProductScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Handle button press for More Option 3
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Categories()));
                     print('All Categories');
                   },
                   child: Container(
-                    width: 100,
-                    height: 90,
+                    width: 80,
+                    height: 80,
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.deepOrange,
@@ -570,12 +620,14 @@ class ProductScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => PaymentPage()));
                     // Handle button press for More Option 4
                     print('Payment');
                   },
                   child: Container(
-                    width: 100,
-                    height: 90,
+                    width: 80,
+                    height: 80,
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.deepPurple,
