@@ -18,18 +18,21 @@ class Categories extends StatelessWidget {
                 title: 'Chicago Style 🍕',
                 description:
                     'Chicago Style 🍕 with extra layered sauce and vegetarians.',
+                price: 400,
                 rating: 4,
               ),
               PizzaSpecialCard(
                 image: 'assets/images/Indian style pizza.jpg',
                 title: ' Indian Style 🍕',
                 description: 'Indian Style 🍕 basically a roti pizza',
+                price: 300,
                 rating: 5,
               ),
               PizzaSpecialCard(
                 image: 'assets/images/Calzone.jpg',
                 title: 'Calzone 🍕',
                 description: 'Calzone with extra cheese.',
+                price: 450,
                 rating: 5,
               ),
               PizzaSpecialCard(
@@ -37,6 +40,7 @@ class Categories extends StatelessWidget {
                 title: ' New Haven🍕',
                 description:
                     'New Haven 🍕 popularly known as New York Style 🍕 ',
+                price: 550,
                 rating: 5,
               ),
             ],
@@ -51,12 +55,14 @@ class PizzaSpecialCard extends StatelessWidget {
   final String image;
   final String title;
   final String description;
+  final int price;
   final int rating;
 
   const PizzaSpecialCard({
     required this.image,
     required this.title,
     required this.description,
+    required this.price,
     required this.rating,
   });
 
@@ -87,6 +93,11 @@ class PizzaSpecialCard extends StatelessWidget {
                 Text(
                   description,
                   style: TextStyle(fontSize: 16),
+                ),
+                SizedBox(height: 2),
+                Text(
+                  'price:$price',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 2),
                 Row(

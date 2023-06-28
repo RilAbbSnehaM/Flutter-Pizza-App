@@ -5,28 +5,28 @@ class PaymentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Payment'),
+        title: const Text('Payment'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Total Amount: \$19.99',
+            const Text(
+              'Total Amount: Rs200',
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16.0),
-            TextField(
+            const SizedBox(height: 16.0),
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Card Number',
               ),
             ),
-            SizedBox(height: 16.0),
-            Row(
+            const SizedBox(height: 16.0),
+            const Row(
               children: [
                 Expanded(
                   child: TextField(
@@ -45,13 +45,13 @@ class PaymentPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
                 print("Payment done");
                 // TODO: Implement payment processing logic
               },
-              child: Text('Pay Now'),
+              child: const Text('Pay Now'),
             ),
           ],
         ),

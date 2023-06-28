@@ -18,24 +18,28 @@ class PizzaSpecialsScreen extends StatelessWidget {
                 title: 'Burger 🍔',
                 description: 'Delicious Burger with extra cheese.',
                 rating: 4,
+                price: 200,
               ),
               PizzaSpecialCard(
                 image: 'assets/images/Hot-Dog-PNG-Pic.png',
                 title: 'Hot Dog 🌭',
                 description: 'Hot Dog with extra sausage.',
                 rating: 5,
+                price: 300,
               ),
               PizzaSpecialCard(
                 image: 'assets/images/lollipop.jpeg',
                 title: 'lollipop 🍗',
                 description: 'lollipop with extra cheese.',
                 rating: 5,
+                price: 400,
               ),
               PizzaSpecialCard(
                 image: 'assets/images/noodles.jpg',
                 title: 'Chowmien 🍜',
                 description: 'Chowmien with extra masala.',
                 rating: 5,
+                price: 500,
               ),
             ],
           ),
@@ -50,12 +54,14 @@ class PizzaSpecialCard extends StatelessWidget {
   final String title;
   final String description;
   final int rating;
+  final int price;
 
   const PizzaSpecialCard({
     required this.image,
     required this.title,
     required this.description,
     required this.rating,
+    required this.price,
   });
 
   @override
@@ -86,6 +92,10 @@ class PizzaSpecialCard extends StatelessWidget {
                   description,
                   style: TextStyle(fontSize: 16),
                 ),
+                SizedBox(width: 5),
+                Text('price:$price',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 SizedBox(height: 2),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

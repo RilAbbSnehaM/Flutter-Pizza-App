@@ -87,13 +87,11 @@ class ProductScreen extends StatelessWidget {
               leading: const Icon(
                 Icons.app_registration,
               ),
-              title: const Text('sign in'),
+              title: const Text('Sign in'),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => SignInPage(),
-                  ),
-                );
+                    MaterialPageRoute(builder: (context) => SignInPage()));
               },
             ),
           ],

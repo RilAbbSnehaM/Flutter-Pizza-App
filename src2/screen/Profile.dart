@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project/src2/screen/OrderScreen.dart';
+import 'package:project/src2/screen/Wel.dart';
+
+import 'package:project/src2/screen/sign%20in%20.dart';
+
+import 'Address.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -13,6 +19,13 @@ class _ProfileScreenState extends State<Profile> {
     "Your Address",
     "Your Coupons",
     "Log Out",
+  ];
+
+  List<String> userOrders = [
+    "Pepperoni Pizza",
+    "Margherita Pizza",
+    "BBQ Chicken Pizza",
+    "Vegetarian Pizza",
   ];
 
   @override
@@ -91,9 +104,16 @@ class _ProfileScreenState extends State<Profile> {
   void handleUserOptionTap(int index) {
     switch (index) {
       case 0:
-        print("Your Orders");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => OrderScreen(),
+          ),
+        );
         break;
       case 1:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AddressPage()));
         print("Your Address");
         break;
       case 2:
@@ -101,6 +121,10 @@ class _ProfileScreenState extends State<Profile> {
         break;
       case 3:
         print("Log Out");
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => WelcomePage()),
+        );
         break;
     }
   }

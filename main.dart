@@ -1,8 +1,5 @@
-// ignore: unused_import
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'package:project/src2/screen/Homescreen.dart';
-import 'package:project/src2/screen/home.dart';
+import 'package:project/src2/screen/Wel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: ProductScreen(),
+      home: WelcomePage(),
     );
   }
 }
