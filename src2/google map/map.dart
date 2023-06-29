@@ -7,12 +7,12 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:geolocator/geolocator.dart';
 
-class AddressPage extends StatefulWidget {
+class Map extends StatefulWidget {
   @override
-  _AddressPageState createState() => _AddressPageState();
+  _Map createState() => _Map();
 }
 
-class _AddressPageState extends State<AddressPage> {
+class _Map extends State<Map> {
   String googleApikey = "AIzaSyCM0jZy1XEDEOyhDqy3vOn_5p0qcUvDUQs";
   bool servicestatus = false;
   bool haspermission = false;
