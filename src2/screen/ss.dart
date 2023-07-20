@@ -50,9 +50,3 @@ class HotDealsPage extends StatelessWidget {
     );
   }
 }
-
-void main() {
-  runApp(MaterialApp(
-    home: HotDealsPage(),
-  ));
-}
